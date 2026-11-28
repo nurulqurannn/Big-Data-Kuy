@@ -1,35 +1,30 @@
-#! /usr/bin/env python3
-# vim:fenc=utf-8
-#
-# Copyleft © 2026 Anung <anung@trisakti.ac.id>
-# 2026-11-19 13:29
-# Distributed under terms of the MIT license.
-
 """
-Template source code tugas kelompok ELA6105
+Big-Data-Kuy — Dashboard Analisis Program Makan Bergizi Gratis (MBG) Indonesia 2026
+Kelompok 007 • Matakuliah Big Data Analisis
 """
 
 import streamlit as st
 
-st.set_page_config (
-    page_title="Kelompok 007",
-    page_icon="X",
-    layout="wide"
+st.set_page_config(
+    page_title="Dashboard MBG Indonesia 2026",
+    page_icon="🍽️",
+    layout="wide",
 )
-
-st.title("Proyek Kelompok 007")
-st.caption("Aplikasi streamlit kelompok 007")
 
 pages = [
-    st.Page("page1.py", title="Home", icon="📋"),
-    st.Page("page2.py", title="Data", icon='🛢️'),
-    st.Page("page3.py", title="Visualisasi", icon='📊'),
-    st.Page("page4.py", title="Profil", icon="👤")
+    st.Page("page1.py", title="Beranda",      icon="🏠"),
+    st.Page("page2.py", title="Data Explorer", icon="🔍"),
+    st.Page("page3.py", title="Visualisasi",   icon="📊"),
+    st.Page("page4.py", title="Profil Tim",    icon="👥"),
 ]
 
-pg = st.navigation (
-    pages,
-    position = 'sidebar',
-    expanded = True
-)
+pg = st.navigation(pages, position="sidebar", expanded=True)
 
+# --- Sidebar branding ---
+with st.sidebar:
+    st.markdown("---")
+    st.caption("🍽️ **Dashboard MBG Indonesia 2026**")
+    st.caption("Kelompok 007 — Big Data Analisis")
+    st.caption("Danang · Nurul · Diyah")
+
+pg.run()
